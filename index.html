@@ -1,0 +1,55 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator Hide App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loadingOverlay">🔐 Authenticating...</div>
+
+  <div class="auth-screen" id="authScreen">
+    <h2>Face ID / Fingerprint</h2>
+    <div class="auth-buttons">
+      <button onclick="simulateAuth('face')">Scan Face ID</button>
+      <button onclick="simulateAuth('finger')">Use Fingerprint</button>
+    </div>
+  </div>
+
+  <div class="calculator" id="calculatorApp">
+    <button id="themeToggle">🌓</button>
+    <div class="screen" id="screen">0</div>
+    <div class="buttons">
+      <button onclick="press('7')">7</button>
+      <button onclick="press('8')">8</button>
+      <button onclick="press('9')">9</button>
+      <button onclick="clearScreen()">C</button>
+      <button onclick="press('4')">4</button>
+      <button onclick="press('5')">5</button>
+      <button onclick="press('6')">6</button>
+      <button onclick="press('+')">+</button>
+      <button onclick="press('1')">1</button>
+      <button onclick="press('2')">2</button>
+      <button onclick="press('3')">3</button>
+      <button onclick="press('-')">-</button>
+      <button onclick="press('0')">0</button>
+      <button onclick="press('.')">.</button>
+      <button onclick="calculate()">=</button>
+      <button onclick="press('*')">*</button>
+    </div>
+
+    <div class="hidden-menu" id="hiddenMenu">
+      <h3>📦 Hidden App Manager</h3>
+      <div class="password-change">
+        <input type="password" id="newPassword" placeholder="New Password">
+        <button onclick="changePassword()">Change</button>
+      </div>
+      <div class="app-list" id="appList"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
